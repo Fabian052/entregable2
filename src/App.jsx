@@ -73,12 +73,12 @@ function App() {
         <img src={weatherImages[weatherInfo?.weather[0].icon]} className='w-full h-full object-cover'/>
       </div>
 
-      <section className='relative grid gap-8 justify-items-center'>
-        <Input handleSubmit={handleSubmit} />
         {
-          weatherInfo ? <Weather weatherInfo={weatherInfo} /> : <Loadder />
+          weatherInfo ? <section className='relative grid gap-8 justify-items-center'>
+          <Input handleSubmit={handleSubmit} />
+          <Weather weatherInfo={weatherInfo} />
+          </section> : <Loadder />
         }
-      </section>
       
     </main>
   )
